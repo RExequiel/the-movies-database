@@ -1,3 +1,17 @@
+# Challenge Alkemy
+
+Proyecto de peliculas, en donde podes ver / buscar peliculas y ver su detalle. Se ingresa a la app mediante login con validación. Proximamente sección de favoritos y responsive design.
+
+
+---
+
+## Datos de login
+
+#### Correo: challenge@alkemy.org
+#### Contraseña: react
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
