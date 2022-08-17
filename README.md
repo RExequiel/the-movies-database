@@ -1,6 +1,6 @@
 # Challenge Alkemy
 
-Proyecto de peliculas, en donde podes ver / buscar peliculas y ver su detalle. Se ingresa a la app mediante login con validación. Proximamente sección de favoritos y responsive design.
+Proyecto de peliculas, en donde podes ver / buscar peliculas y ver su detalle. Se ingresa a la app mediante login con validación. Proximamente sección de favoritos y responsive design para mobile.
 
 
 ---
