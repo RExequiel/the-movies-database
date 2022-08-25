@@ -37,6 +37,7 @@ const MovieList = () => {
             <div className="col-3" key={movie._id}>
               <div className="card">
                 <img src={movie.image}  alt="img" />
+                <button className="favourite-btn">💛</button>
                 <div className="card-body">
                   <h5 className="card-title">{movie.title.substring(0, 20)}...<br/>{movie.year}</h5>
                   <p className="card-text">
