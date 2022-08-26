@@ -6,8 +6,10 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Movie from "./components/Movie/Movie";
 import Results from "./components/Results/Results";
+import Favourite from "./components/Favourite/Favourite";
 
 function App() {
+
   return (
     <>
       <Header />
@@ -18,6 +20,7 @@ function App() {
           <Route path="/movieList" element={<MovieList />} />
           <Route path="/movie" element={<Movie/>} />
           <Route path="/results" element={<Results/>} />
+          <Route path="/favourite" element={<Favourite/>} />
         </Routes>
       </div>
       

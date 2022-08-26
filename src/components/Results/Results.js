@@ -1,6 +1,7 @@
 import swal from "@sweetalert/with-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import addOrRemoveFavourite from "../AddOrRemoveFavourite";
 
 const Results = () => {
     let query = new URLSearchParams(window.location.search);
@@ -45,6 +46,13 @@ const Results = () => {
             <div className="col-3" key={movie._id}>
               <div className="card">
                 <img src={movie.image}  alt="img" />
+                <button 
+                  className="favourite-btn"
+                  onClick={addOrRemoveFavourite}
+                  data-movie-id={movie._id}
+                >
+                  💛
+                </button>
                 <div className="card-body">
                   <h5 className="card-title">{movie.title.substring(0, 20)}...<br/>{movie.year}</h5>
                   <p className="card-text">
