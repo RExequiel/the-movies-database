@@ -26,38 +26,58 @@ const Movie = () => {
       .then(function (response) {
         setMovieDetail(response.data.result);
       })
-      .catch(err => swal({
-        icon: "warning",
-        title: `Ocurrio un error: ${err}, intenta más tarde`,
-      }));
+      .catch((err) =>
+        swal({
+          icon: "warning",
+          title: `Ocurrio un error: ${err}, intenta más tarde`,
+        })
+      );
   }, [movieID]);
 
-//   console.log(movieDetail);
+  //   console.log(movieDetail);
   return (
     <>
       {!token && <Navigate to="/" />}
-      {!movieDetail && 
-                        <div className='container'> 
-                            <button className="btn btn-primary" type="button" disabled>
-                                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                Cargando...
-                            </button>
-                        </div>}
+
+      {!movieDetail && (
+        <div className="container">
+          <button className="btn btn-primary" type="button" disabled>
+            <span
+              className="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Cargando...
+          </button>
+        </div>
+      )}
       {movieDetail && (
         <div className="container">
           <div className="row">
             <h3>{movieDetail.title}</h3>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div className="col-3">
               <img src={movieDetail.image} className="img-fluid" alt="img" />
             </div>
             <div className="col-8">
-                <h6><strong>Titulo Original: </strong>{movieDetail.titleOriginal}</h6>
-                <h6><strong>Fecha: </strong>{movieDetail.release}</h6>
-                <h6><strong>Calificación: </strong>{movieDetail.rating}</h6>
-              <strong>Genero: </strong>{movieDetail.genres.map((gen)=><li key={gen.uuid}>{gen.name}</li>)}
-              <br/>
+              <h6>
+                <strong>Titulo Original: </strong>
+                {movieDetail.titleOriginal}
+              </h6>
+              <h6>
+                <strong>Fecha: </strong>
+                {movieDetail.release}
+              </h6>
+              <h6>
+                <strong>Calificación: </strong>
+                {movieDetail.rating}
+              </h6>
+              <strong>Genero: </strong>
+              {movieDetail.genres.map((gen) => (
+                <li key={gen.uuid}>{gen.name}</li>
+              ))}
+              <br />
               <strong>Reseña: </strong>
               <p>{movieDetail.description}</p>
             </div>

@@ -1,3 +1,4 @@
+import swal from "@sweetalert/with-react";
 import { useEffect, useState } from "react";
 
 export const useFavs = () => {
@@ -13,7 +14,7 @@ export const useFavs = () => {
     return favourites;
 }
 
-const addOrRemoveFavourite = (e,useFavs) => {
+const addOrRemoveFavourite = e => {
   
     const favsMovies = localStorage.getItem("favs");
 
@@ -41,16 +42,24 @@ const addOrRemoveFavourite = (e,useFavs) => {
   let movieIsInArray = tempMoviesFavourite.find(
     (oneMovie) => oneMovie.id === dataMovie.id
   );
+  
   if (!movieIsInArray) {
     tempMoviesFavourite.push(dataMovie);
     localStorage.setItem("favs", JSON.stringify(tempMoviesFavourite));
-    console.log("Se agrego la pelicula");
+    btn.classList.add('favourite-add');
+    swal({
+      title: "Se agrego la pelicula a Favoritos",
+    });
   } else {
     let movieToDelete = tempMoviesFavourite.filter(
       (oneMovie) => oneMovie.id !== dataMovie.id
     );
     localStorage.setItem("favs", JSON.stringify(movieToDelete));
-    console.log("Se elimino la pelicula");
+    btn.classList.remove('favourite-add');
+    swal({
+      icon: "warning",
+      title: "Se elimino la pelicula de Favoritos",
+    })
   } 
   //console.log(results);
 };
